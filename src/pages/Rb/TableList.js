@@ -27,6 +27,8 @@ import PageHeaderWrapper from '@/components/PageHeaderWrapper';
 
 import styles from './TableList.less';
 
+const serverName = 'rb'
+
 const FormItem = Form.Item;
 const { Step } = Steps;
 const { TextArea } = Input;
@@ -381,7 +383,6 @@ class TableList extends PureComponent {
         <Fragment>
           <a onClick={() => this.handleUpdateModalVisible(true, record)}>修改</a>
           <Divider type="vertical" />
-          <a onClick={() => this.handleUpdateModalVisible(true, record)}>删除</a>
         </Fragment>
       ),
     },
@@ -391,6 +392,9 @@ class TableList extends PureComponent {
     const { dispatch } = this.props;
     dispatch({
       type: 'rbrule/fetch',
+      payload: {
+        server: serverName,
+      }
     });
   }
 
@@ -416,7 +420,9 @@ class TableList extends PureComponent {
 
     dispatch({
       type: 'rbrule/fetch',
-      payload: params,
+      payload: {
+        server: serverName,
+      },
     });
   };
 
@@ -428,7 +434,9 @@ class TableList extends PureComponent {
     });
     dispatch({
       type: 'rbrule/fetch',
-      payload: {},
+      payload: {
+        server: serverName,
+      },
     });
   };
 
@@ -449,7 +457,10 @@ class TableList extends PureComponent {
         dispatch({
           type: 'rbrule/remove',
           payload: {
-            key: selectedRows.map(row => row.key),
+            id: 1,
+            server: 'ora',
+            name: 'name',
+            user: 'liuyifei'
           },
           callback: () => {
             this.setState({
@@ -488,7 +499,9 @@ class TableList extends PureComponent {
 
       dispatch({
         type: 'rbrule/fetch',
-        payload: values,
+        payload: {
+        server: serverName,
+      },
       });
     });
   };
@@ -550,7 +563,6 @@ class TableList extends PureComponent {
     const menu = (
       <Menu onClick={this.handleMenuClick} selectedKeys={[]}>
         <Menu.Item key="remove">删除</Menu.Item>
-        <Menu.Item key="approval">批量审批</Menu.Item>
       </Menu>
     );
 

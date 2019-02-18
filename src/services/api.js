@@ -14,7 +14,7 @@ export async function queryRule(params) {
 }
 
 //add by yuxuan /queryconfig?server=rb
-export async function queryRb() {
+export async function queryRb(params) {
   return request(`/api/queryconfig?server=rb&${stringify(params)}`);
 }
 
@@ -29,7 +29,7 @@ export async function removeRule(params) {
 }
 
 export async function removeRb(params) {
-  return request('/api/rule', {
+  return request('/api/delconfig', {
     method: 'POST',
     body: {
       ...params,
