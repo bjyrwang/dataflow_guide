@@ -457,8 +457,8 @@ class TableList extends PureComponent {
         dispatch({
           type: 'rbrule/remove',
           payload: {
-            id: 1,
-            server: 'ora',
+            id: selectedRows.map(row => row.key),
+            server: serverName,
             name: 'name',
             user: 'liuyifei'
           },

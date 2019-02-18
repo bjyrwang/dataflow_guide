@@ -33,7 +33,7 @@ export async function removeRb(params) {
     method: 'POST',
     body: {
       ...params,
-      method: 'delete',
+      method: 'post',
     },
   });
 }
