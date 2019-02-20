@@ -133,6 +133,7 @@ class UpdateForm extends PureComponent {
 
     this.state = {
       formVals: {
+        id: props.values.id,
         name: props.values.name,
         desc: props.values.desc,
         cityid: props.values.cityid,
@@ -540,6 +541,7 @@ class TableList extends PureComponent {
       payload: {
         query: formValues,
         body: {
+          id: fields.id,
           name: fields.name,
           desc: fields.desc,
           cityid: fields.cityid,

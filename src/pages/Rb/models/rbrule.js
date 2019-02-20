@@ -1,4 +1,4 @@
-import { queryRb, removeRb, addRule, updateRule } from '@/services/api';
+import { queryRb, removeRb, addRule, updateRb } from '@/services/api';
 
 export default {
   namespace: 'rbrule',
@@ -35,7 +35,7 @@ export default {
       if (callback) callback();
     },
     *update({ payload, callback }, { call, put }) {
-      const response = yield call(updateRule, payload);
+      const response = yield call(updateRb, payload);
       yield put({
         type: 'save',
         payload: response,

@@ -69,7 +69,7 @@ export async function updateRule(params = {}) {
 }
 
 export async function updateRb(params = {}) {
-  return request(`/api/rule?${stringify(params.query)}`, {
+  return request(`/api/updateconfig`, {
     method: 'POST',
     body: {
       ...params.body,
